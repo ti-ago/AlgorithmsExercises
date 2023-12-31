@@ -28,13 +28,19 @@ Inicio
         res <-maiusc(res)
         numLin <- asc(res)-64
         numCol <- caracpnum(copia(res;2,1))
-        sala[numLin,numCol] <- "**"
-        para i de 8 ate 1 passo -1 faca
-            para j de 1 ate 8 faca
-                escreva("["+sala[i,j]+"] ")
+        se (sala[numLin,numCol] = "XX") entao
+            escreval("Lugar ja ocupado, tente novamente")
+        senao
+            sala[numLin,numCol] <- "XX"
+            para i de 8 ate 1 passo -1 faca
+                para j de 1 ate 8 faca
+                    escreva("["+sala[i,j]+"] ")
+                fimPara
+                escreval()
             fimPara
-            escreval()
-        fimPara
+            escreval("=======================================")
+            escreval("-----------------TELA------------------")
+        fimSe
     escreval("Quer continuar?[S/N]")
     leia(cont)
     cont<- maiusc(cont)
